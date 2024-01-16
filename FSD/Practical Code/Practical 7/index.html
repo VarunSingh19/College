@@ -1,0 +1,68 @@
+<!-- 
+
+1. ng-click : Triggered when an element is clicked.
+2. ng-blur : Triggered when an input loses focus.
+3. ng-focus :Triggered when an input gains focus.
+4. ng-change : Triggered when the value of an input changes.
+5. ng-submit : Triggered when a form is submitted. 
+
+-->
+
+<!DOCTYPE html>
+<html ng-app="formApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AngularJS  Form Application</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body ng-controller="FormController">
+    <h1>AngularJS Form Application</h1>
+    <form ng-submit="submitForm()">
+        <label for="name">Name :</label>
+        <input type="text" id="name" ng-model="formData.name" ng-blur="validateName()" ng-focus="resetNameError()">
+        <span style="color:red;" ng-show="nameError">{{nameError}}</span>
+        <br>
+        <label for="email">Email :</label>
+        <input type="text" id="email" ng-model="formData.email" ng-blur="validateEmail()" ng-focus="resetEmailError()">
+        <span style="color:red;" ng-show="emailError">{{emailError}}</span>
+        <br>
+        <button type="button" ng-click="clickEvent()">Click Me</button>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    
+</body>
+
+<script>
+    angular.module('formApp',[])
+    .controller('FormController',['$scope',function($scope){
+        $scope.formData = {};
+        $scope.clickEvent = function(){
+            console.log("Click Event Triggered.");
+        };
+        $scope.validateName = function(){
+            if(!scope.formData.name){
+                $scope.nameError = 'Name Is required';
+            }else{
+                $scope.nameError = '';
+            }
+        };
+        $scope.resetNameError = function(){
+            $scope.nameError = '';
+        };
+        $scope.validateEmail = function(){
+            if(!$scope.formData.email){
+                $scope.emailError = 'Email is required.'; 
+            }else if(!/^\S+@\S+\.\S+$/.test($scope.formData.email)){
+                $scope.emailError = 'Invalid email Format.';
+            }else{
+                $scope.emailError = '';
+            }
+        };
+        $scope.submitForm = function(){
+            console.log('Form Submitted :',$scope.formData);
+        };
+    }]);
+</script>
+</html>

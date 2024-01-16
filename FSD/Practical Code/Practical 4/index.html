@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping List</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body ng-app="scartApp" ng-controller="SCartController as cartCtrl">
+    <h1>Shopping Cart Application</h1>
+    <div>
+        <table border="1">
+            <tr>
+                <td><b>Product Name</b></td>
+                <td><b>Quantity</b></td>
+                <td><b>Price</b></td>
+                <td><b>Total Price</b></td>
+                <td><b>Operation</b></td>
+            </tr>
+
+            <tr ng-repeat="item in cartCtrl.items">
+                <td>{{item.Name}}</td>
+                <td><input ng-model="item.quantity"></td>
+                <td>{{item.price | currency}}</td>
+                <td>{{item.price * item.quantity | currency}}</td>
+                <td><button ng-click="cartCtrl.remove($index)">Remove</button></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        var sapp = angular.module('scartApp', []);
+        sapp.controller('SCartController', ['$scope', function($scope){
+            var cartCtrl = this;
+            
+            cartCtrl.items = [
+                {Name: 'Shirt', quantity: 10, price: 100},
+                {Name: 'SweatShirt', quantity: 10, price: 110},
+                {Name: 'Hoodie', quantity: 10, price: 120},
+                {Name: 'Bikini', quantity: 10, price: 130}
+            ];
+            
+            cartCtrl.remove = function(index){
+                cartCtrl.items.splice(index, 1);
+            };
+        }]);
+    </script>
+
+    <!-- <script>
+        var sapp = angular.module('scartApp',[]);
+        sapp.controller('SCController',['$scope',function($scope){
+            var cartCtrl = this;
+            cartCtrl.items = [
+                {Name: 'Laptop', quantity:13,price:564},
+                {Name: 'Mouse',quantity:13,price:10},
+                {Name: 'Keyboard',quantity:13,price:20},
+            ]
+        }])
+    </script>
+
+    <script>
+        var varname = angular.module('moduleName',[]);
+        varname.controller('ControllerName',['$scope',function($scope){
+            var appCtrl = this;
+            appCtrl.items=[
+                {Name: 'Laptop', quantity:13,price:564},
+                {Name: 'Mouse',quantity:13,price:10},
+                {Name: 'Keyboard',quantity:13,price:20},
+            ]
+        }])
+    </script> -->
+</body>
+</html>

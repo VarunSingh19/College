@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="translateApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translate Application</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body ng-controller="translateController">
+    <h1>Translate Application</h1>
+    <select ng-model="selectedLanguage">
+        <option ng-repeat="language in languages" 
+        value="{{language.code}}">{{language.name}}</option>
+    </select>
+
+    <div>
+        <h2>Selected Language : {{selectedLanguage}}</h2>
+        <p>{{translations[selectedLanguage]}}</p>
+    </div>
+</body>
+
+<script>
+    angular.module('translateApp', []) 
+    .controller('translateController', function($scope) { 
+        $scope.languages = [
+            { name: 'English', code: 'en'},
+            { name: 'Tamil', code: 'tm'},
+            { name: 'Marathi', code: 'mr'},
+            { name: 'Hindi', code: 'hd'}
+        ];
+        $scope.translations = {
+            'en': 'Hello!',
+            'tm': 'Vanakkam!',
+            'mr': 'Namaskar!',
+            'hd': 'Namaste!'
+        };
+        $scope.selectedLanguage = 'en';
+    });
+</script>
+</html>

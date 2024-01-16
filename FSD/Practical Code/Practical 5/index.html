@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart Application</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body ng-app="cartApp" ng-controller="cartController">
+    <h1>Cart Application</h1>
+    <div ng-repeat="product in products">
+        <p>{{product.name}} - ${{product.price}}</p>
+        <button ng-click="addToCart(product)">Add to Cart</button>
+    </div>
+    <h2>Cart</h2>
+    <ul>
+        <li ng-repeat="item in cartItems">{{item.name}} - ${{item.price}}</li>
+    </ul>
+    <h3>Total : ${{ getTotal() }}</h3>
+
+    <script>
+        angular.module('cartApp', [])
+        .controller('cartController', function($scope) {
+            $scope.products = [
+                { name: 'Product 1', price: 19 },
+                { name: 'Product 2', price: 20 },
+                { name: 'Product 3', price: 21 },
+            ];
+            $scope.cartItems = [];
+            $scope.addToCart = function(product) {
+                $scope.cartItems.push(product);
+            }
+            $scope.getTotal = function() {
+                var total = 0;
+                for (var i = 0; i < $scope.cartItems.length; i++) {
+                    total += $scope.cartItems[i].price;
+                }
+                return total;
+            }
+        })
+    </script>
+</body>
+</html>

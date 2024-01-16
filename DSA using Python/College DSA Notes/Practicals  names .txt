@@ -1,0 +1,19 @@
+'''
+Practical 1:
+Linear Search ,Binary Search
+
+Practical 2:
+Insertion Sort , Selection Sort, Bubble Sort
+
+Practical 3:
+Merge Sort
+
+Practical 4:
+Quick Sort
+
+Practical 5:
+Implementation Of Stack Using List
+Implementation Of Stack Using Deque
+
+there is more...
+'''
