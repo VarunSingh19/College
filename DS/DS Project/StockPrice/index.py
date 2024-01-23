@@ -15,7 +15,6 @@ def get_stock_price(stock_symbol):
             return f"Unable to find the stock price element for {stock_symbol}."
     else:
         return f"Failed to retrieve data for {stock_symbol}. Status code: {response.status_code}"
-
 stocks = ["META", "AAPL", "GOOGL", "AMZN", "MSFT", "TSLA", "IBM", "META", "NFLX", "NVDA", "V", "PYPL", "GS", "JPM", "BA", "CSCO", "INTC", "DIS", "GE", "WMT"]
 stock_data = []
 for stock_symbol in stocks:
