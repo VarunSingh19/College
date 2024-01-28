@@ -1,0 +1,28 @@
+clear all;
+clc;
+close;
+Wp = input("Enter the Digital Pass Band Edge Frequency :");
+Ws = input("Enter the Digital Stop band Edge Frequency :");
+T = input("Sampling Interval :");
+OmegaP = (2/T)*tan(Wp/2);
+OmegaS = (2/T)*tan(Ws/2);
+Delta1 = input("Enter the pass band Ripple :");
+Delta2 = input("Enter the Stop band Ripple :");
+Delta = sqrt(((1/Delta2)^2)-1);
+Epsilon = sqrt(((1/Delta1)^2)-1);
+N = (acosh(Delta/Epsilon))/(acosh(OmegaS/OmegaP));
+N = ceil(N);
+OmegaC = OmegaP/((((1/Delta1)^2)-1)^(1/(2*N)));
+[pols,gn] = zpch1(N,Epsilon,OmegaP);
+Hs = poly(gn,'s','coeff')/real(poly(pols,'s'));
+z = poly(0,'z');
+Hz = horner(Hs,((2/T)*((z-1)/(z+1))));
+Hw = frmag(Hz(2),Hz(3),512); //Frequency response for 512 points.
+W = 0:%pi/511:%pi;
+a = gca();
+a.thickness = 1;
+plot(W/%pi,abs(Hw),'r');
+a.foreground = 1;
+a.font_style = 9;
+xgrid(1);
+xtitle("Magnitude Response of Chebyshev LPF Filter" , "Normalizedd Digital Frequency ---> ","Magnitude in dB");

@@ -24,7 +24,7 @@ def FirstProblem2():
 
         print("The factorial of", num, "is", factorial)
 
-
+# Program to find Fibonacci Series of a number.
 def SecondProblem1():
     def Recursive_Fibonacci(n):
         if n <= 1:
@@ -40,7 +40,7 @@ def SecondProblem1():
         for i in range(nterms):
             print(Recursive_Fibonacci(i))
 
-
+# Program for Tower Of Hanoi.
 def ThirdProblem1():
     def Tower_of_honai(n,from_rod,to_rod,aux_rod):
         if n == 1:
@@ -53,7 +53,7 @@ def ThirdProblem1():
     n = int(input("Enter the number of disks :"))
     Tower_of_honai(n,'A','B','C')
 
-# FirstProblem1()
-# FirstProblem2()
-# SecondProblem1()
-# ThirdProblem1()
+FirstProblem1()
+FirstProblem2()
+SecondProblem1()
+ThirdProblem1()
