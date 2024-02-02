@@ -76,7 +76,7 @@ ylabel('Amplitude');
 
 // SINE WAVE
 t = 0:0.04:1;
-x = sin(2 * %pi * t);
+x = sin(2 * pi * t);
 subplot(3, 4, 6);
 f = gca();
 f.foreground = 5;
@@ -89,7 +89,7 @@ ylabel('Amplitude');
 
 // COSINE WAVE
 t = 0:0.04:1;
-x = cos(2 * %pi * t);
+x = cos(2 * pi * t);
 subplot(3, 4, 7);
 g = gca();
 g.foreground = 5;

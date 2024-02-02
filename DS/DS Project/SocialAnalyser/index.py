@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 url = "https://www.statista.com/statistics/272014/global-social-networks-ranked-by-number-of-users/"
 response = requests.get(url)
 soup = BeautifulSoup(response.content, 'html.parser')
+# print(soup)
 user_counts = []
 social_networks = []
 table = soup.find('table')

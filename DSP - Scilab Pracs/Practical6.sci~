@@ -2,7 +2,7 @@ clc;
 clear;
 close;
 
-N = input('Enter the value of N= '); // Number of points
+N = input('Enter the value of N= '); % Number of points
 x = input('Enter the input sequence x(n) = ');
 
 subplot(3, 2, 1);
@@ -15,7 +15,7 @@ title('Input sequence');
 xlabel('Samples n');
 ylabel('Amplitude');
 
-// Calculation of DFT
+% Calculation of DFT
 y = zeros(1, N);
 for k = 1:N
     y(k) = 0;
@@ -40,7 +40,7 @@ title('Output DFT sequence');
 xlabel('Samples n');
 ylabel('Amplitude');
 
-// Real value
+% Real value
 disp('The resultant real value is:');
 disp(A);
 subplot(3, 2, 3);
@@ -53,7 +53,7 @@ title('Real Value');
 xlabel('Samples n');
 ylabel('Amplitude');
 
-// Imaginary value
+% Imaginary value
 disp('The resultant imaginary value is:');
 disp(B);
 subplot(3, 2, 4);
@@ -66,7 +66,7 @@ title('Imaginary Value');
 xlabel('Samples n');
 ylabel('Amplitude');
 
-// Magnitude response
+% Magnitude response
 mag = abs(y);
 disp('The Magnitude response is:');
 disp(mag);
@@ -80,7 +80,7 @@ title('Magnitude Response');
 xlabel('Samples n');
 ylabel('Amplitude');
 
-// Phase response
+% Phase response
 x1 = atan(imag(y), real(y));
 phase = x1 * (180 / %pi);
 disp('The Phase response is:');

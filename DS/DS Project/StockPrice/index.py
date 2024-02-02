@@ -7,6 +7,7 @@ def get_stock_price(stock_symbol):
     response = requests.get(url)
     if response.status_code == 200:
         soup = BeautifulSoup(response.text, 'html.parser')
+        # print(soup)
         stock_price_element = soup.find('div', {'class': 'D(ib) Mend(20px)'}).find('span')
         if stock_price_element:
             stock_price = stock_price_element.text

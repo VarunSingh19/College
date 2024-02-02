@@ -42,7 +42,7 @@ df1 = pd.DataFrame(data)
 # print(df1)
 
 
-# Load file into a DataFrame 
+# Load file into a DataFrame
 # 1. using JSON
 
 df = pd.read_json('https://raw.githubusercontent.com/jdorfman/awesome-json-datasets/master/package.json')
@@ -50,7 +50,7 @@ df = pd.read_json('https://raw.githubusercontent.com/jdorfman/awesome-json-datas
 
 print(df.isnull())
 
-#  the isnull() function is a method in pandas used to detect missing or NaN 
+#  the isnull() function is a method in pandas used to detect missing or NaN
 # (Not a Number) values in a DataFrame or Series. 
 
 
