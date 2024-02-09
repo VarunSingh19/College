@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #a3cfb4;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6 text-center">
+                <h1>PREDICTION:</h1>
+                {% if data == 0 %}
+                <h1>Iris-setosa</h1>
+                <img src="static/setosa.jpg" alt="Setosa" class="img-fluid">
+                {% else %}
+                <h1>Iris-versicolor</h1>
+                <img src="static/verci.jpg" alt="Versicolor" class="img-fluid">
+                {% endif %}
+                <br><br>
+                <a href="/">Go back to home page</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

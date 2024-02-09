@@ -50,10 +50,9 @@ H = fft(h1);
 
 for i = 1:l:N
     x1 = [x(i : min(i + n3 - 1, m)), zeros(1, n3 - 1)];
-    
     x2 = fft(x1);
-    x3 = x2 .* H;
-    x4 = round(ifft(x3));
+    x3 = x2.*.H; // Fix: Remove the dot before H
+    x4 = ifft(x3); // Fix: Remove the round function
     
     if i == 1
         y(1 : n3) = x4(1 : n3);
