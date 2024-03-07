@@ -1,39 +1,29 @@
-def printJobScheduling(arr,t):
-    # Length of array
-    n = len(arr)
-    # Sort all jobs according to 
-    # Decreasing order of profit
-    for i in range(n):
-        for j in range(n-1-i):
-            if arr[j][2] < arr[j + 1][2]:
-                arr[j],arr[j + 1] = arr[j + 1],arr[j]
-    
-    # to keep track of free time slots
-    result = [False] * t
-    # To store result (sequence of jobs)
-    job = ['-1']*t
-    # Iterate through all given jobs
-    for i in range(len(arr)):
-        # find a free slot for this job
-        # (Note that we start from the
-        # last possible slot)
-        for j in range(min(t - 1, arr[i][1]),-1,-1):
-            # Free slot found
-            if result[j] is False:
-                result[j] = True
-                job[j] = arr[i][0]
-                break
-    
-    # Print the sequence
-    print(job)
+print("Priyanka Tiwari:1000")
 
-# Driver's Code..
+class job:
+    def __init__(self, task_id, deadline, profit):
+        self.task_id = task_id
+        self.deadline = deadline
+        self.profit = profit
+
+def schedule_jobs(jobs, t):
+    profit = 0
+    slot = [-1] * t
+    jobs.sort(key=lambda x: x.profit, reverse=True)
+    for job in jobs:
+        for j in reversed(range(job.deadline)):
+            if j < t and slot[j] == -1:
+                slot[j] = job.task_id
+                profit += job.profit
+                break
+
+    print("Scheduled jobs are:", list(filter(lambda x: x != -1, slot)))
+    print("The total profit:", profit)
+
 if __name__ == "__main__":
-    arr = [['a',2,100],
-           ['b',1,19],
-           ['c',2,27],
-           ['d',1,25],
-           ['e',3,15]
-           ]
-    print("Following is the maximum profit sequence of jobs :")
-    printJobScheduling(arr,3)
+    jobs = [
+        job(1, 9, 15), job(2, 2, 2), job(3, 5, 18), job(4, 7, 1), job(5, 4, 25), 
+        job(6, 2, 20),job(7, 5, 8), job(8, 7, 10), job(9, 4, 12), job(10, 3, 5)
+    ]
+    t = 15
+    schedule_jobs(jobs, t)

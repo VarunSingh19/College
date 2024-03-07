@@ -1,13 +1,3 @@
-# Graph Representation
-
-#    5
-#   / \
-#  3   7
-#  |   |
-#  2   8
-#  |
-#  4
-
 graph = {
   '5' : ['3','7'],
   '3' : ['2', '4'],
@@ -16,7 +6,6 @@ graph = {
   '4' : ['8'],
   '8' : []
 }
-
 visited = [] # List for visited nodes.
 queue = []   # Initialize a queue.
 
@@ -34,5 +23,6 @@ def bfs(visited, graph, node): #function for BFS.
         queue.append(neighbour)
 
 # Driver Code.
+print("Name: Priyanka Tiwari\nClass: SYBSC CS\nRoll no: 1000")
 print("Following is the Breadth-First Search")
 bfs(visited, graph, '5')
