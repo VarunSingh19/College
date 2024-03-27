@@ -1,0 +1,53 @@
+[33mcommit fa8efe35bfb7f330e32e4f8ad45f516a4c368188[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: Rohan <rohansh3535@gmail.com>
+Date:   Wed Jan 3 01:11:57 2024 +0530
+
+    Add form for editing admin details
+
+[33mcommit 94ccd8dbeb92110e5e55549e364c88bea87c70ee[m
+Author: Rohan <rohansh3535@gmail.com>
+Date:   Wed Jan 3 01:11:10 2024 +0530
+
+    Add form for removing staff entries
+
+[33mcommit 725e1488df2a0d3fa0f98ed3a5f1a98b3af2c7b8[m
+Author: Rohan <rohansh3535@gmail.com>
+Date:   Wed Jan 3 01:10:27 2024 +0530
+
+    Add form for removing books from the system
+
+[33mcommit c0d27846601d536dc18eafddfd92a38b39c7def7[m
+Author: Rohan <rohansh3535@gmail.com>
+Date:   Wed Jan 3 01:09:50 2024 +0530
+
+    Add form for adding staff functionality
+
+[33mcommit 2fbbac0bf883dd5d6e4844e74b7f9a2b952a7caa[m
+Author: Rohan <rohansh3535@gmail.com>
+Date:   Wed Jan 3 01:09:18 2024 +0530
+
+    Add form for adding books functionality
+
+[33mcommit 15b8bee73f381643692452445f572909650166f8[m
+Author: Rohan <rohansh3535@gmail.com>
+Date:   Wed Jan 3 01:08:16 2024 +0530
+
+    Add form for viewing and editing staff details
+
+[33mcommit 09be295aba4be6ea31c21f963f7cdefce1f7869c[m
+Author: Rohan <rohansh3535@gmail.com>
+Date:   Wed Jan 3 01:07:10 2024 +0530
+
+    Add form for displaying available books
+
+[33mcommit c502cbb3615b4bf8fc64873575043e825c69e347[m
+Author: Rohan <rohansh3535@gmail.com>
+Date:   Wed Jan 3 01:06:16 2024 +0530
+
+    Add main dashboard form with navigation
+
+[33mcommit 14e1657fc8f5b380cbb2693b0ac658dbea9b9181[m
+Author: Rohan <rohansh3535@gmail.com>
+Date:   Wed Jan 3 01:05:08 2024 +0530
+
+    Add login page form with user authentication
