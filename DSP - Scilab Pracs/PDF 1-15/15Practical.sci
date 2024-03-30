@@ -5,7 +5,8 @@ close;
 wp = input('Enter the Digital Pass Band edge Frequency = '); // 0.2 * %pi
 ws = input('Enter the Digital Stop Band edge Frequency = '); // 0.6 * %pi
 t = input('Sampling Interval= '); // 1
-del1 = input('Enter the Pass Band Ripple = '); // 0.8
+del1 = input('Enter the Pass Band Ripple = '
+); // 0.8
 del2 = input('Enter the Stop Band Ripple = '); // 0.2
 
 disp(wp, 'Wp= ');
