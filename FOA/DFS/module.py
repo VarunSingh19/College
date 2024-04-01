@@ -23,6 +23,6 @@ def dfs(visited,graph,node):
         for neighbors in graph[node]:
             dfs(visited,graph,neighbors)
 # Display the result of DFS traversal starting from node '5'
-print("Name: Priyanka Tiwari\nClass: SYBSC CS\nRoll no: 1000")
+print("Name: Varun Singh\nClass: SYBSC CS\nRoll no: 999")
 print("The following is the tree traversal using DFS: ")
 dfs(visited,graph,'5')

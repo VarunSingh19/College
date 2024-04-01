@@ -1,4 +1,4 @@
-print("Priyanka Tiwari:1000")
+print("Name: Varun Singh\nClass: SYBSC CS\nRoll no: 999")
 
 class job:
     def __init__(self, task_id, deadline, profit):

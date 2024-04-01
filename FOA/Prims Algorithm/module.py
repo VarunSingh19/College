@@ -1,4 +1,4 @@
-print("Priyanka Tiwari :100")
+print("Name: Varun Singh\nClass: SYBSC CS\nRoll no: 999")
 import sys
 
 class Graph():

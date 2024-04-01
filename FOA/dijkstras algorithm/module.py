@@ -1,4 +1,4 @@
-print("Priyanka Tiwari: 1000")
+print("Name: Varun Singh\nClass: SYBSC CS\nRoll no: 999")
 import sys
 
 def to_be_visited():

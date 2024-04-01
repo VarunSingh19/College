@@ -1,4 +1,4 @@
-print("Priyanka Tiwari : 1000")
+print("Name: Varun Singh\nClass: SYBSC CS\nRoll no: 999")
 class DisjointSet:
     def __init__(self, vertices):
         self.parent = [i for i in range(vertices)]
